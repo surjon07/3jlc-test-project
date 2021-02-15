@@ -14,7 +14,9 @@ class WebService extends Controller
 
         return 
             json_encode(
-                Person::all()
+                [
+                    'data' => Person::all()
+                ]
             );
 
     }
@@ -22,7 +24,9 @@ class WebService extends Controller
 
         return 
             json_encode(
-                Person::findOrFail($request->id)
+                [
+                    'data' => Person::find($request->id)
+                ]
             );
 
     }
